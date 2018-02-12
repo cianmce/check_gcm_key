@@ -3,7 +3,7 @@
 if [ -z "$1" ]
 then
   echo 'run using:'
-  echo '  ./check_gcm_key "gcm server key"'
+  echo '  check_gcm_key "gcm server key"'
   exit
 fi
 

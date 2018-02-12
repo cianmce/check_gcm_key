@@ -1,5 +1,13 @@
-## check_gcm_key
+# check_gcm_key
+
+## Install
 
 ```bash
-  ./check_gcm_key "gcm server key"
+  cp check_gcm_key /usr/local/bin/
+```
+
+## Running
+
+```bash
+  check_gcm_key "gcm server key"
 ```
