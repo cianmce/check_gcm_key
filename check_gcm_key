@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ -z "$1" ]
+then
+  echo 'run using:'
+  echo '  ./check_gcm_key "gcm server key"'
+  exit
+fi
+
+CODE=$(curl -o /dev/null -sw '%{http_code}' -X POST https://android.googleapis.com/gcm/send -H "Authorization: key=$1" -H "Content-Type: application/json" | grep 401)
+
+if [ -z "$CODE" ]
+then
+  echo "Key is valid"
+else
+  echo "Google Cloud Messaging API rejected the server key."
+  exit 1
+fi
